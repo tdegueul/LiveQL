@@ -32,7 +32,7 @@ public class FormParser {
 		tokens.setTokenSource(new QLLexer(stream));
 		QLParser parser = new QLParser(tokens);
 		try {
-			return parser.form();
+			return parser.form().result;
 		} catch (RecognitionException e) {
 			throw new ParseError(e.getMessage());
 		}
