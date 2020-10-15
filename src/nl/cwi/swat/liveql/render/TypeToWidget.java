@@ -39,7 +39,7 @@ public class TypeToWidget implements Visitor<Widget, Ident> {
 		cb.addChangeListener(new ChangeListener() {
 			
 			@Override
-			public void stateChanged(ChangeEvent _) {
+			public void stateChanged(ChangeEvent _a) {
 				for (QState q: theState.getStates(name)) {
 					q.setValue(new nl.cwi.swat.liveql.eval.Bool(cb.isSelected()));
 				}

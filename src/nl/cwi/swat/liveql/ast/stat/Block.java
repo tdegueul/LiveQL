@@ -86,33 +86,33 @@ public class Block extends Stat {
 	}
 	
 	@Override
-	public StatPatch diffToAnswerable(Answerable me, QuestionPatch _) {
+	public StatPatch diffToAnswerable(Answerable me, QuestionPatch _a) {
 		return diffToBlock(me);
 	}
 	
 	
 	@Override
-	public StatPatch diffToComputed(Computed me, QuestionPatch _) {
+	public StatPatch diffToComputed(Computed me, QuestionPatch _a) {
 		return diffToBlock(me);
 	}
 	
 	@Override
-	public StatPatch diffToIfThen(IfThen me, IfThenElsePatch _) {
+	public StatPatch diffToIfThen(IfThen me, IfThenElsePatch _a) {
 		return diffToBlock(me);
 	}
 	
 	@Override
-	public StatPatch diffToIfThen(IfThen me, IfThenPatch _) {
+	public StatPatch diffToIfThen(IfThen me, IfThenPatch _a) {
 		return diffToBlock(me);
 	}
 	
 	@Override
-	public StatPatch diffToIfThenElse(IfThenElse me, IfThenElsePatch _) {
+	public StatPatch diffToIfThenElse(IfThenElse me, IfThenElsePatch _a) {
 		return diffToBlock(me);
 	}
 	
 	@Override
-	public StatPatch diffToIfThenElse(IfThenElse me, IfThenPatch _) {
+	public StatPatch diffToIfThenElse(IfThenElse me, IfThenPatch _a) {
 		return diffToBlock(me);
 	}
 
