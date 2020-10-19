@@ -1,4 +1,4 @@
-// $ANTLR 3.5.2 src/nl/cwi/swat/liveql/parser/antlr/QL.g 2020-10-15 17:48:40
+// $ANTLR 3.5.2 src/nl/cwi/swat/liveql/parser/antlr/QL.g 2020-10-15 21:22:22
 
 package nl.cwi.swat.liveql.parser.antlr;
 
@@ -11,10 +11,6 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class QLLexer extends Lexer {
 	public static final int EOF=-1;
-	public static final int T__9=9;
-	public static final int T__10=10;
-	public static final int T__11=11;
-	public static final int T__12=12;
 	public static final int T__13=13;
 	public static final int T__14=14;
 	public static final int T__15=15;
@@ -37,11 +33,19 @@ public class QLLexer extends Lexer {
 	public static final int T__32=32;
 	public static final int T__33=33;
 	public static final int T__34=34;
-	public static final int COMMENT=4;
-	public static final int Ident=5;
-	public static final int Int=6;
-	public static final int Str=7;
-	public static final int WS=8;
+	public static final int T__35=35;
+	public static final int T__36=36;
+	public static final int T__37=37;
+	public static final int T__38=38;
+	public static final int BLOCK=4;
+	public static final int COMMENT=5;
+	public static final int COND=6;
+	public static final int FORM=7;
+	public static final int Ident=8;
+	public static final int Int=9;
+	public static final int QUESTION=10;
+	public static final int Str=11;
+	public static final int WS=12;
 
 	// delegates
 	// delegators
@@ -58,97 +62,15 @@ public class QLLexer extends Lexer {
 	}
 	@Override public String getGrammarFileName() { return "src/nl/cwi/swat/liveql/parser/antlr/QL.g"; }
 
-	// $ANTLR start "T__9"
-	public final void mT__9() throws RecognitionException {
-		try {
-			int _type = T__9;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:6:6: ( '!' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:6:8: '!'
-			{
-			match('!'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__9"
-
-	// $ANTLR start "T__10"
-	public final void mT__10() throws RecognitionException {
-		try {
-			int _type = T__10;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:7:7: ( '!=' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:7:9: '!='
-			{
-			match("!="); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__10"
-
-	// $ANTLR start "T__11"
-	public final void mT__11() throws RecognitionException {
-		try {
-			int _type = T__11;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:8:7: ( '&&' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:8:9: '&&'
-			{
-			match("&&"); 
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__11"
-
-	// $ANTLR start "T__12"
-	public final void mT__12() throws RecognitionException {
-		try {
-			int _type = T__12;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:9:7: ( '(' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:9:9: '('
-			{
-			match('('); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__12"
-
 	// $ANTLR start "T__13"
 	public final void mT__13() throws RecognitionException {
 		try {
 			int _type = T__13;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:10:7: ( ')' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:10:9: ')'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:6:7: ( '!' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:6:9: '!'
 			{
-			match(')'); 
+			match('!'); 
 			}
 
 			state.type = _type;
@@ -165,10 +87,11 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__14;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:11:7: ( '*' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:11:9: '*'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:7:7: ( '!=' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:7:9: '!='
 			{
-			match('*'); 
+			match("!="); 
+
 			}
 
 			state.type = _type;
@@ -185,10 +108,11 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__15;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:12:7: ( '+' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:12:9: '+'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:8:7: ( '&&' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:8:9: '&&'
 			{
-			match('+'); 
+			match("&&"); 
+
 			}
 
 			state.type = _type;
@@ -205,10 +129,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__16;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:13:7: ( '-' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:13:9: '-'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:9:7: ( '(' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:9:9: '('
 			{
-			match('-'); 
+			match('('); 
 			}
 
 			state.type = _type;
@@ -225,10 +149,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__17;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:14:7: ( '/' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:14:9: '/'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:10:7: ( ')' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:10:9: ')'
 			{
-			match('/'); 
+			match(')'); 
 			}
 
 			state.type = _type;
@@ -245,10 +169,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__18;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:15:7: ( ':' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:15:9: ':'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:11:7: ( '*' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:11:9: '*'
 			{
-			match(':'); 
+			match('*'); 
 			}
 
 			state.type = _type;
@@ -265,10 +189,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__19;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:16:7: ( '<' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:16:9: '<'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:12:7: ( '+' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:12:9: '+'
 			{
-			match('<'); 
+			match('+'); 
 			}
 
 			state.type = _type;
@@ -285,11 +209,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__20;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:17:7: ( '<=' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:17:9: '<='
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:13:7: ( '-' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:13:9: '-'
 			{
-			match("<="); 
-
+			match('-'); 
 			}
 
 			state.type = _type;
@@ -306,11 +229,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__21;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:18:7: ( '==' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:18:9: '=='
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:14:7: ( '/' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:14:9: '/'
 			{
-			match("=="); 
-
+			match('/'); 
 			}
 
 			state.type = _type;
@@ -327,10 +249,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__22;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:19:7: ( '>' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:19:9: '>'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:15:7: ( ':' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:15:9: ':'
 			{
-			match('>'); 
+			match(':'); 
 			}
 
 			state.type = _type;
@@ -347,11 +269,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__23;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:20:7: ( '>=' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:20:9: '>='
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:16:7: ( '<' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:16:9: '<'
 			{
-			match(">="); 
-
+			match('<'); 
 			}
 
 			state.type = _type;
@@ -368,10 +289,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__24;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:21:7: ( 'bool' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:21:9: 'bool'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:17:7: ( '<=' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:17:9: '<='
 			{
-			match("bool"); 
+			match("<="); 
 
 			}
 
@@ -389,10 +310,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__25;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:22:7: ( 'else' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:22:9: 'else'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:18:7: ( '==' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:18:9: '=='
 			{
-			match("else"); 
+			match("=="); 
 
 			}
 
@@ -410,11 +331,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__26;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:23:7: ( 'false' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:23:9: 'false'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:19:7: ( '>' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:19:9: '>'
 			{
-			match("false"); 
-
+			match('>'); 
 			}
 
 			state.type = _type;
@@ -431,10 +351,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__27;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:24:7: ( 'form' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:24:9: 'form'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:20:7: ( '>=' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:20:9: '>='
 			{
-			match("form"); 
+			match(">="); 
 
 			}
 
@@ -452,10 +372,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__28;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:25:7: ( 'if' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:25:9: 'if'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:21:7: ( 'bool' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:21:9: 'bool'
 			{
-			match("if"); 
+			match("bool"); 
 
 			}
 
@@ -473,10 +393,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__29;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:26:7: ( 'int' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:26:9: 'int'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:22:7: ( 'else' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:22:9: 'else'
 			{
-			match("int"); 
+			match("else"); 
 
 			}
 
@@ -494,10 +414,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__30;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:27:7: ( 'str' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:27:9: 'str'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:23:7: ( 'false' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:23:9: 'false'
 			{
-			match("str"); 
+			match("false"); 
 
 			}
 
@@ -515,10 +435,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__31;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:28:7: ( 'true' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:28:9: 'true'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:24:7: ( 'form' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:24:9: 'form'
 			{
-			match("true"); 
+			match("form"); 
 
 			}
 
@@ -536,10 +456,11 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__32;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:29:7: ( '{' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:29:9: '{'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:25:7: ( 'if' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:25:9: 'if'
 			{
-			match('{'); 
+			match("if"); 
+
 			}
 
 			state.type = _type;
@@ -556,10 +477,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__33;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:30:7: ( '||' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:30:9: '||'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:26:7: ( 'int' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:26:9: 'int'
 			{
-			match("||"); 
+			match("int"); 
 
 			}
 
@@ -577,6 +498,89 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = T__34;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:27:7: ( 'str' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:27:9: 'str'
+			{
+			match("str"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__34"
+
+	// $ANTLR start "T__35"
+	public final void mT__35() throws RecognitionException {
+		try {
+			int _type = T__35;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:28:7: ( 'true' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:28:9: 'true'
+			{
+			match("true"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__35"
+
+	// $ANTLR start "T__36"
+	public final void mT__36() throws RecognitionException {
+		try {
+			int _type = T__36;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:29:7: ( '{' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:29:9: '{'
+			{
+			match('{'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__36"
+
+	// $ANTLR start "T__37"
+	public final void mT__37() throws RecognitionException {
+		try {
+			int _type = T__37;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:30:7: ( '||' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:30:9: '||'
+			{
+			match("||"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__37"
+
+	// $ANTLR start "T__38"
+	public final void mT__38() throws RecognitionException {
+		try {
+			int _type = T__38;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:31:7: ( '}' )
 			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:31:9: '}'
 			{
@@ -590,15 +594,15 @@ public class QLLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "T__34"
+	// $ANTLR end "T__38"
 
 	// $ANTLR start "WS"
 	public final void mWS() throws RecognitionException {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:132:5: ( ( ' ' | '\\t' | '\\n' | '\\r' ) )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:132:7: ( ' ' | '\\t' | '\\n' | '\\r' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:140:5: ( ( ' ' | '\\t' | '\\n' | '\\r' ) )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:140:7: ( ' ' | '\\t' | '\\n' | '\\r' )
 			{
 			if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 				input.consume();
@@ -625,12 +629,12 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:136:6: ( '/*' ( . )* '*/' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:136:8: '/*' ( . )* '*/'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:144:6: ( '/*' ( . )* '*/' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:144:8: '/*' ( . )* '*/'
 			{
 			match("/*"); 
 
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:136:13: ( . )*
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:144:13: ( . )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -651,7 +655,7 @@ public class QLLexer extends Lexer {
 
 				switch (alt1) {
 				case 1 :
-					// src/nl/cwi/swat/liveql/parser/antlr/QL.g:136:13: .
+					// src/nl/cwi/swat/liveql/parser/antlr/QL.g:144:13: .
 					{
 					matchAny(); 
 					}
@@ -681,8 +685,8 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = Ident;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:139:6: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:139:10: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:147:6: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )* )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:147:10: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -692,7 +696,7 @@ public class QLLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:139:29: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:147:29: ( 'a' .. 'z' | 'A' .. 'Z' | '0' .. '9' | '_' )*
 			loop2:
 			while (true) {
 				int alt2=2;
@@ -737,10 +741,10 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = Int;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:141:4: ( ( '0' .. '9' )+ )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:141:6: ( '0' .. '9' )+
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:149:4: ( ( '0' .. '9' )+ )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:149:6: ( '0' .. '9' )+
 			{
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:141:6: ( '0' .. '9' )+
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:149:6: ( '0' .. '9' )+
 			int cnt3=0;
 			loop3:
 			while (true) {
@@ -789,11 +793,11 @@ public class QLLexer extends Lexer {
 		try {
 			int _type = Str;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:143:4: ( '\"' ( . )* '\"' )
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:143:6: '\"' ( . )* '\"'
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:151:4: ( '\"' ( . )* '\"' )
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:151:6: '\"' ( . )* '\"'
 			{
 			match('\"'); 
-			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:143:10: ( . )*
+			// src/nl/cwi/swat/liveql/parser/antlr/QL.g:151:10: ( . )*
 			loop4:
 			while (true) {
 				int alt4=2;
@@ -807,7 +811,7 @@ public class QLLexer extends Lexer {
 
 				switch (alt4) {
 				case 1 :
-					// src/nl/cwi/swat/liveql/parser/antlr/QL.g:143:10: .
+					// src/nl/cwi/swat/liveql/parser/antlr/QL.g:151:10: .
 					{
 					matchAny(); 
 					}
@@ -832,222 +836,222 @@ public class QLLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:8: ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | WS | COMMENT | Ident | Int | Str )
+		// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | WS | COMMENT | Ident | Int | Str )
 		int alt5=31;
 		alt5 = dfa5.predict(input);
 		switch (alt5) {
 			case 1 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:10: T__9
-				{
-				mT__9(); 
-
-				}
-				break;
-			case 2 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:15: T__10
-				{
-				mT__10(); 
-
-				}
-				break;
-			case 3 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:21: T__11
-				{
-				mT__11(); 
-
-				}
-				break;
-			case 4 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:27: T__12
-				{
-				mT__12(); 
-
-				}
-				break;
-			case 5 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:33: T__13
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:10: T__13
 				{
 				mT__13(); 
 
 				}
 				break;
-			case 6 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:39: T__14
+			case 2 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:16: T__14
 				{
 				mT__14(); 
 
 				}
 				break;
-			case 7 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:45: T__15
+			case 3 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:22: T__15
 				{
 				mT__15(); 
 
 				}
 				break;
-			case 8 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:51: T__16
+			case 4 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:28: T__16
 				{
 				mT__16(); 
 
 				}
 				break;
-			case 9 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:57: T__17
+			case 5 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:34: T__17
 				{
 				mT__17(); 
 
 				}
 				break;
-			case 10 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:63: T__18
+			case 6 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:40: T__18
 				{
 				mT__18(); 
 
 				}
 				break;
-			case 11 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:69: T__19
+			case 7 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:46: T__19
 				{
 				mT__19(); 
 
 				}
 				break;
-			case 12 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:75: T__20
+			case 8 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:52: T__20
 				{
 				mT__20(); 
 
 				}
 				break;
-			case 13 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:81: T__21
+			case 9 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:58: T__21
 				{
 				mT__21(); 
 
 				}
 				break;
-			case 14 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:87: T__22
+			case 10 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:64: T__22
 				{
 				mT__22(); 
 
 				}
 				break;
-			case 15 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:93: T__23
+			case 11 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:70: T__23
 				{
 				mT__23(); 
 
 				}
 				break;
-			case 16 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:99: T__24
+			case 12 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:76: T__24
 				{
 				mT__24(); 
 
 				}
 				break;
-			case 17 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:105: T__25
+			case 13 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:82: T__25
 				{
 				mT__25(); 
 
 				}
 				break;
-			case 18 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:111: T__26
+			case 14 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:88: T__26
 				{
 				mT__26(); 
 
 				}
 				break;
-			case 19 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:117: T__27
+			case 15 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:94: T__27
 				{
 				mT__27(); 
 
 				}
 				break;
-			case 20 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:123: T__28
+			case 16 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:100: T__28
 				{
 				mT__28(); 
 
 				}
 				break;
-			case 21 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:129: T__29
+			case 17 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:106: T__29
 				{
 				mT__29(); 
 
 				}
 				break;
-			case 22 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:135: T__30
+			case 18 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:112: T__30
 				{
 				mT__30(); 
 
 				}
 				break;
-			case 23 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:141: T__31
+			case 19 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:118: T__31
 				{
 				mT__31(); 
 
 				}
 				break;
-			case 24 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:147: T__32
+			case 20 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:124: T__32
 				{
 				mT__32(); 
 
 				}
 				break;
-			case 25 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:153: T__33
+			case 21 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:130: T__33
 				{
 				mT__33(); 
 
 				}
 				break;
-			case 26 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:159: T__34
+			case 22 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:136: T__34
 				{
 				mT__34(); 
 
 				}
 				break;
+			case 23 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:142: T__35
+				{
+				mT__35(); 
+
+				}
+				break;
+			case 24 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:148: T__36
+				{
+				mT__36(); 
+
+				}
+				break;
+			case 25 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:154: T__37
+				{
+				mT__37(); 
+
+				}
+				break;
+			case 26 :
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:160: T__38
+				{
+				mT__38(); 
+
+				}
+				break;
 			case 27 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:165: WS
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:166: WS
 				{
 				mWS(); 
 
 				}
 				break;
 			case 28 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:168: COMMENT
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:169: COMMENT
 				{
 				mCOMMENT(); 
 
 				}
 				break;
 			case 29 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:176: Ident
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:177: Ident
 				{
 				mIdent(); 
 
 				}
 				break;
 			case 30 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:182: Int
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:183: Int
 				{
 				mInt(); 
 
 				}
 				break;
 			case 31 :
-				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:186: Str
+				// src/nl/cwi/swat/liveql/parser/antlr/QL.g:1:187: Str
 				{
 				mStr(); 
 
@@ -1182,7 +1186,7 @@ public class QLLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__9 | T__10 | T__11 | T__12 | T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | WS | COMMENT | Ident | Int | Str );";
+			return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | WS | COMMENT | Ident | Int | Str );";
 		}
 	}
 

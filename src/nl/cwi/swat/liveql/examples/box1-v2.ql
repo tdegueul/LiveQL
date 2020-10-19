@@ -7,7 +7,7 @@ form Box1HouseOwning {
   "Did you by a house in 2010?" 
      hasBoughtHouse: bool
      
-  if (!hasSoldHouse) {
+  if (hasSoldHouse) {
     "Private debts for the sold house:" 
        privateDebt: int
     "Price the house was sold for:" 

@@ -1,6 +1,13 @@
 grammar QL;
 options {backtrack=true; memoize=true; output=AST; ASTLabelType=CommonTree;}
 
+tokens {
+	FORM;
+	BLOCK;
+	COND;
+	QUESTION;
+}
+
 @parser::header
 {
 package nl.cwi.swat.liveql.parser.antlr;
@@ -21,22 +28,23 @@ package nl.cwi.swat.liveql.parser.antlr;
     }
 }
 
-
 form returns [Form result]
-  : 'form' Ident body=block { $result = new Form(new Ident($Ident.text, $Ident.getLine()), $body.result); }
+  : 'form' Ident body=block { $result = new Form(new Ident($Ident.text, $Ident.getLine()), $body.result); } -> ^(FORM Ident block)
   ;
   
 block returns [Block result]
 @init { List<Stat> stats = new ArrayList<Stat>(); }
-  : t='{' ( s=stat { stats.add($s.result); } )* '}' { $result = new Block(stats, $t.getLine()); }
+  : t='{' ( s=stat { stats.add($s.result); } )* '}' { $result = new Block(stats, $t.getLine()); } -> ^(BLOCK stat*)
   ;
   
 stat returns [Stat result]
-  : 'if' '(' c=orExpr ')' tru=stat 'else' fls=stat { $result = new IfThenElse($c.result, $tru.result, $fls.result); }
-  | 'if' '(' c=orExpr ')' tru=stat { $result = new IfThen($c.result, $tru.result); }
+  : 'if' '(' c=orExpr ')' tru=stat 'else' fls=stat { $result = new IfThenElse($c.result, $tru.result, $fls.result); } -> ^(COND orExpr stat)
+  | 'if' '(' c=orExpr ')' tru=stat { $result = new IfThen($c.result, $tru.result); } -> ^(COND orExpr stat)
   | b=block { $result = $b.result; }
   | l=label name=Ident ':' t=type '(' e=orExpr ')' { $result = new Computed($l.result, new Ident($name.text, $name.getLine()), $t.result, $e.result); }
-  | l=label name=Ident ':' t=type { $result = new Answerable($l.result, new Ident($name.text, $name.getLine()), $t.result); }   
+  	-> ^(QUESTION label Ident type orExpr)
+  | l=label name=Ident ':' t=type { $result = new Answerable($l.result, new Ident($name.text, $name.getLine()), $t.result); } 
+  	-> ^(QUESTION label Ident type)  
   ;
 
 label returns [Label result]
@@ -54,7 +62,7 @@ primary returns [Expr result]
   | Ident { $result = new Ident($Ident.text, $Ident.getLine()); }
   | Str   { $result = new Str($Str.text, $Str.getLine()); }
   | bool  { $result = $bool.result; }
-  | '(' x=orExpr ')'{ $result = $x.result; }
+  | '(' x=orExpr ')'{ $result = $x.result; } -> ^(orExpr)
   ;
   
 bool returns [Expr result]
@@ -70,7 +78,7 @@ unExpr returns [Expr result]
     ;    
     
 mulExpr returns [Expr result]
-    :   lhs=unExpr { $result=$lhs.result; } ( op=( '*' | '/' ) rhs=unExpr 
+    :   lhs=unExpr { $result=$lhs.result; } ( op=( '*' | '/' )^ rhs=unExpr 
     { 
       if ($op.text.equals("*")) {
         $result = new Mul($result, $rhs.result);
@@ -83,7 +91,7 @@ mulExpr returns [Expr result]
     
   
 addExpr returns [Expr result]
-    :   lhs=mulExpr { $result=$lhs.result; } ( op=('+' | '-') rhs=mulExpr
+    :   lhs=mulExpr { $result=$lhs.result; } ( op=('+' | '-')^ rhs=mulExpr
     { 
       if ($op.text.equals("+")) {
         $result = new Add($result, $rhs.result);
@@ -95,7 +103,7 @@ addExpr returns [Expr result]
     ;
   
 relExpr returns [Expr result]
-    :   lhs=addExpr { $result=$lhs.result; } ( op=('<'|'<='|'>'|'>='|'=='|'!=') rhs=addExpr 
+    :   lhs=addExpr { $result=$lhs.result; } ( op=('<'|'<='|'>'|'>='|'=='|'!=')^ rhs=addExpr 
     { 
       if ($op.text.equals("<")) {
         $result = new LT($result, $rhs.result);
@@ -119,12 +127,12 @@ relExpr returns [Expr result]
     ;
     
 andExpr returns [Expr result]
-    :   lhs=relExpr { $result=$lhs.result; } ( '&&' rhs=relExpr { $result = new And($result, $rhs.result); } )*
+    :   lhs=relExpr { $result=$lhs.result; } ( '&&'^ rhs=relExpr { $result = new And($result, $rhs.result); } )*
     ;
     
 
 orExpr returns [Expr result]
-    :   lhs=andExpr { $result = $lhs.result; } ( '||' rhs=andExpr { $result = new Or($result, $rhs.result); } )*
+    :   lhs=andExpr { $result = $lhs.result; } ( '||'^ rhs=andExpr { $result = new Or($result, $rhs.result); } )*
     ;
 
     
